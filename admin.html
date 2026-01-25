@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f6f9;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      max-width: 500px;
+      height: 120px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🛠 หน้าแก้ไขเว็บไซต์</h2>
+<p>หน้านี้เข้าได้เฉพาะแอดมิน</p>
+
+<textarea id="content">ข้อความตัวอย่าง</textarea><br>
+<button onclick="save()">บันทึก</button>
+
+<script>
+  if (localStorage.getItem("login") !== "true") {
+    window.location = "login.html";
+  }
+
+  function save() {
+    alert("บันทึกแล้ว (ตัวอย่าง)");
+  }
+</script>
+
+</body>
+</html>
