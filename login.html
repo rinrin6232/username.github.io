@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 280px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.2);
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>🔐 Admin Login</h2>
+  <input type="text" id="user" placeholder="Username">
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">เข้าสู่ระบบ</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+  function login() {
+    const u = document.getElementById("user").value;
+    const p = document.getElementById("pass").value;
+
+    if (u === "admin" && p === "1234") {
+      localStorage.setItem("login", "true");
+      window.location = "admin.html";
+    } else {
+      document.getElementById("msg").innerText = "❌ ชื่อผู้ใช้หรือรหัสผ่านผิด";
+    }
+  }
+</script>
+
+</body>
+</html>
