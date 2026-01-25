@@ -6,8 +6,8 @@
   <style>
     body {
       font-family: sans-serif;
-      background: #f4f6f9;
       padding: 20px;
+      background: #f4f6f9;
     }
     textarea {
       width: 100%;
@@ -30,19 +30,28 @@
 </head>
 <body>
 
-<h2>🛠 หน้าแก้ไขเว็บไซต์</h2>
-<p>หน้านี้เข้าได้เฉพาะแอดมิน</p>
+<h2>🛠 แอดมินแก้ไขหน้าเว็บ</h2>
 
-<textarea id="content">ข้อความตัวอย่าง</textarea><br>
+<textarea id="editor"></textarea><br>
 <button onclick="save()">บันทึก</button>
+<button onclick="logout()">ออกจากระบบ</button>
 
 <script>
   if (localStorage.getItem("login") !== "true") {
     window.location = "login.html";
   }
 
+  const saved = localStorage.getItem("mainText");
+  editor.value = saved || "ข้อความเริ่มต้นของเว็บไซต์";
+
   function save() {
-    alert("บันทึกแล้ว (ตัวอย่าง)");
+    localStorage.setItem("mainText", editor.value);
+    alert("✅ บันทึกแล้ว");
+  }
+
+  function logout() {
+    localStorage.removeItem("login");
+    window.location = "index.html";
   }
 </script>
 
