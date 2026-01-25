@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <a href="login.html">เข้าสู่ระบบแอดมิน</a>
   <meta charset="UTF-8">
-  <title>ร้านนวด งามฟ้า </title>
+  <title>เว็บไซต์ของฉัน</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      font-family: sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 20px;
+      background: #f5f7fa;
     }
     header {
-      background: rgba(255,255,255,0.9);
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-    .card {
-      background: white;
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: rgba(0,0,0,0.7);
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    button {
       background: #4CAF50;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 15px;
     }
-    button:hover {
-      background: #45a049;
+    .admin-link {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: black;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>ยินดีต้อนรับสู่ร้านนวดงามฟ้า </h1>
+<header>
+  <h2>ยินดีต้อนรับ</h2>
+    <h2>ร้านนวดงามฟ้า</h2>
+
+</header>
+
+<a href="login.html" class="admin-link">แอดมิน</a>
+<h1>ยินดีต้อนรับสู่ร้านนวดงามฟ้า </h1>
     <p>นวด&สปา</p>
   </header>
 <section>
+
   <h2>บริการของเรา</h2>
   <ul>
     <li>นวดแผนไทย 60 นาที – 300 บาท</li>
@@ -74,7 +61,7 @@
   <section>
     <div class="card">
       <h2>เกี่ยวกับฉัน</h2>
-      <p>ทดสอบ3 🎉</p>
+      <p>ทดสอบ4 🎉</p>
       <button onclick="alert('ขอบคุณที่มาใช้บริการค่ะ! 😊')">กดทักทาย</button>
     </div>
   </section>
@@ -86,3 +73,16 @@
 </body>
 </html>
 
+
+<h3>บริการของเรา</h3>
+<p id="mainText">ข้อความเริ่มต้นของเว็บไซต์</p>
+
+<script>
+  const saved = localStorage.getItem("mainText");
+  if (saved) {
+    document.getElementById("mainText").innerText = saved;
+  }
+</script>
+
+</body>
+</html>
